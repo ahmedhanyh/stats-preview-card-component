@@ -41,6 +41,7 @@ body {
 }
 
 .main-card {
+  margin: 20px;
   max-width: 960px;
   background-color: var(--dark-desaturated-blue);
   border-radius: 6px;
@@ -53,7 +54,7 @@ body {
   padding: 48px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  justify-content: space-between;
 }
 
 .content__info {
@@ -98,13 +99,58 @@ body {
 
 .main-card__image {
   flex: 1;
-  background-image: url(./images/image-header-desktop.jpg);
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 0 0 1000px hsla(277, 100%, 40%, 50%);
+  position: relative;
+}
+
+.main-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image__color {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(277, 100%, 40%, 50%);
+}
+
+@media (max-width: 780px) {
+  .main-card {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .main-card__content {
+    padding: 32px 20px;
+    gap: 24px;
+  }
+
+  .content__info {
+    gap: 12px;
+  }
+
+  .content__stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .main-card__image {
+    width: 100%;
+  }
 }
 
 .attribution {
   position: fixed;
   bottom: 4px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.attribution a {
+  color: hsl(228, 82%, 74%);
 }
